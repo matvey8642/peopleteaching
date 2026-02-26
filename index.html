@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Защита пожилых людей от мошенников</title><style>
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f8ff;
+    color:#1a2a44;
+}
+
+header{
+    background:linear-gradient(135deg,#1e3a8a,#2563eb);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+header h1{font-size:36px;}
+header p{font-size:22px;max-width:900px;margin:auto;}
+
+section{max-width:1100px;margin:auto;padding:50px 20px;}
+
+h2{text-align:center;font-size:30px;margin-bottom:40px;}
+
+.lesson-btn{
+    width:100%;
+    padding:35px;
+    font-size:26px;
+    font-weight:bold;
+    border:none;
+    border-radius:18px;
+    margin-bottom:20px;
+    cursor:pointer;
+    transition:0.3s;
+    color:#0f172a;
+}
+
+/* Мягкий шахматный градиент */
+.lesson-btn:nth-of-type(odd){
+    background:linear-gradient(to right,#2563eb,#ffffff);
+}
+
+.lesson-btn:nth-of-type(even){
+    background:linear-gradient(to right,#ffffff,#2563eb);
+}
+
+.lesson-btn:hover{transform:scale(1.02);} 
+
+.lesson-content{
+    max-height:0;
+    overflow:hidden;
+    background:white;
+    border-radius:15px;
+    padding:0 25px;
+    transition:max-height 0.5s ease, padding 0.3s ease;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    margin-bottom:30px;
+}
+
+.lesson-content.open{
+    padding:30px 25px;
+    max-height:1200px;
+}
+
+.lesson-content h3{
+    font-size:24px;
+    margin-bottom:15px;
+    color:#1e3a8a;
+}
+
+.lesson-content p, .lesson-content ul{
+    font-size:22px;
+    line-height:1.7;
+}
+
+.lesson-content li{margin-bottom:12px;}
+
+.protect-title{
+    font-size:24px;
+    font-weight:bold;
+    margin-top:20px;
+    color:#2563eb;
+}
+
+footer{
+    background:#1e3a8a;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.top-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 25px;
+    font-size:20px;
+    background:white;
+    color:#1e3a8a;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.top-btn:hover{background:#e0ecff;}
+
+@media(max-width:700px){
+    .lesson-btn{font-size:22px;padding:25px;}
+    .lesson-content p,.lesson-content ul{font-size:20px;}
+}
+</style><script>
+function toggleLesson(id){
+    var element = document.getElementById(id);
+    element.classList.toggle("open");
+}
+</script></head>
+<body><header id="top">
+<h1>Обучение защите от мошенников</h1>
+<p>Наша цель — помочь пожилым людям понять, как работают мошенники и как защитить себя.</p>
+</header><section>
+<h2>Выберите тему урока</h2><button class="lesson-btn" onclick="toggleLesson('l1')">📞 Телефонные звонки</button>
+
+<div id="l1" class="lesson-content">
+<h3>Как работает обман</h3>
+<p>Мошенник звонит и пугает проблемой с деньгами.</p>
+<div class="protect-title">Как защититься</div>
+<ul>
+<li>Не сообщайте коды из SMS.</li>
+<li>Не называйте номер карты.</li>
+<li>Перезвоните в банк сами.</li>
+</ul>
+</div><button class="lesson-btn" onclick="toggleLesson('l2')">💬 SMS и сообщения</button>
+
+<div id="l2" class="lesson-content">
+<h3>Как работает обман</h3>
+<p>Приходит ссылка о выигрыше или блокировке.</p>
+<div class="protect-title">Как защититься</div>
+<ul>
+<li>Не переходите по ссылкам.</li>
+<li>Удаляйте подозрительные сообщения.</li>
+<li>Советуйтесь с близкими.</li>
+</ul>
+</div><button class="lesson-btn" onclick="toggleLesson('l3')">🌐 Поддельные сайты</button>
+
+<div id="l3" class="lesson-content">
+<h3>Как работает обман</h3>
+<p>Создаются копии сайтов банков и магазинов.</p>
+<div class="protect-title">Как защититься</div>
+<ul>
+<li>Проверяйте адрес сайта.</li>
+<li>Не вводите данные карты.</li>
+<li>Покупайте только на известных сайтах.</li>
+</ul>
+</div><button class="lesson-btn" onclick="toggleLesson('l4')">📦 Обман с посылками</button>
+
+<div id="l4" class="lesson-content">
+<h3>Как работает обман</h3>
+<p>Сообщение о посылке с просьбой оплатить доставку.</p>
+<div class="protect-title">Как защититься</div>
+<ul>
+<li>Проверяйте информацию на официальном сайте.</li>
+<li>Не оплачивайте по ссылкам из SMS.</li>
+</ul>
+</div><button class="lesson-btn" onclick="toggleLesson('l5')">👨‍👩‍👧 Родственник в беде</button>
+
+<div id="l5" class="lesson-content">
+<h3>Как работает обман</h3>
+<p>Звонят и говорят, что родственник попал в беду.</p>
+<div class="protect-title">Как защититься</div>
+<ul>
+<li>Позвоните родственнику лично.</li>
+<li>Не передавайте деньги незнакомым людям.</li>
+</ul>
+</div><button class="lesson-btn" onclick="toggleLesson('l6')">💻 Мошенники в соцсетях</button>
+
+<div id="l6" class="lesson-content">
+<h3>Как работает обман</h3>
+<p>Взламывают аккаунты и просят деньги.</p>
+<div class="protect-title">Как защититься</div>
+<ul>
+<li>Не переводите деньги без личного звонка.</li>
+<li>Используйте сложные пароли.</li>
+</ul>
+</div></section><footer>
+<h2>Контакты создателей</h2>
+<p>Email: m815282@gmail.com</p>
+<p>Телефон: +7 (747) 781-26-30</p>
+<a href="#top" class="top-btn">Вернуться наверх</a>
+</footer></body>
+</html>
