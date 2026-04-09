@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Защита от мошенников</title>
+
+<style>
+body{
+font-family:Arial;
+margin:0;
+background:#fff;
+color:#333;
+font-size:18px;
+}
+
+header{
+background:#1E5AA8;
+color:white;
+padding:25px;
+text-align:center;
+font-size:30px;
+}
+
+.goal{
+background:#E7F1FF;
+padding:30px;
+margin:20px;
+border-radius:15px;
+font-size:22px;
+text-align:center;
+}
+
+.cards{
+display:flex;
+flex-direction:column;
+gap:20px;
+padding:20px;
+}
+
+.card{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 0 12px rgba(0,0,0,0.1);
+cursor:pointer;
+}
+
+.card img{
+width:110px;
+}
+
+.video{
+text-align:center;
+padding:20px;
+}
+
+video{
+width:90%;
+max-width:700px;
+border-radius:15px;
+}
+
+.protect{
+padding:30px;
+font-size:20px;
+line-height:1.7;
+}
+
+button{
+background:#1E5AA8;
+color:white;
+border:none;
+padding:14px 28px;
+font-size:18px;
+border-radius:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#15427A;
+}
+
+.center{
+text-align:center;
+margin:20px;
+}
+
+.top{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#1E5AA8;
+color:white;
+padding:14px;
+border-radius:10px;
+cursor:pointer;
+font-size:18px;
+}
+
+footer{
+background:#1E5AA8;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:30px;
+font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<header>Защита пожилых людей от мошенников</header>
+
+<!-- Главная -->
+<div id="page2">
+
+<div class="goal">
+<h2>Наша цель</h2>
+<p>
+В данный момент существует много мошенников,
+которые обманывают пожилых людей.
+</p>
+<p>
+Наша цель — помочь пожилым людям защититься
+от мошенников и научить распознавать
+самые распространённые схемы обмана.
+</p>
+</div>
+
+<div class="cards">
+
+<div class="card" onclick="openVideo(1)">
+<div>
+<h3>Поддельный выигрыш</h3>
+<p>Вам сообщают о выигрыше и требуют оплату для его получения.</p>
+</div>
+<img src="https://cdn-icons-png.flaticon.com/512/3522/3522697.png">
+</div>
+
+<div class="card" onclick="openVideo(2)">
+<div>
+<h3>Звонок из банка</h3>
+<p>Мошенники представляются сотрудниками банка.</p>
+</div>
+<img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png">
+</div>
+
+<div class="card" onclick="openVideo(3)">
+<div>
+<h3>Звонок "родственника"</h3>
+<p>Говорят, что близкий человек в беде и срочно нужны деньги.</p>
+</div>
+<img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
+</div>
+
+</div>
+
+</div>
+
+<!-- Видео -->
+<div id="page3" style="display:none">
+
+<div class="video">
+<h2 id="videoTitle"></h2>
+
+<video id="videoPlayer" controls>
+<source src="" type="video/mp4">
+</video>
+
+</div>
+
+<div class="protect">
+<h2>Как защититься</h2>
+<p id="protectText"></p>
+</div>
+
+<div class="center">
+<button onclick="back()">Назад</button>
+</div>
+
+</div>
+
+<div class="top" onclick="scrollTopPage()">↑</div>
+
+<footer>
+<h3>Контакты</h3>
+<p>Создатель 1: +7 747 781 26 30</p>
+<p>Создатель 2: +7 708 175 78 88</p>
+</footer>
+
+<script>
+
+function openVideo(num){
+
+document.getElementById("page2").style.display="none"
+document.getElementById("page3").style.display="block"
+
+let video=document.getElementById("videoPlayer")
+let title=document.getElementById("videoTitle")
+let text=""
+
+if(num==1){
+video.src="video1.mp4"
+title.innerText="Поддельный выигрыш"
+
+text=`Мошенники часто сообщают о поддельном выигрыше, чтобы выманить деньги.
+
+Как защититься:
+
+• Никогда не платите за получение выигрыша — настоящие призы не требуют оплаты.
+
+• Не переходите по подозрительным ссылкам и не вводите личные данные.
+
+• Проверяйте информацию только через официальные источники.
+
+• Если вы не участвовали в розыгрыше — выиграть вы не могли.`
+}
+
+if(num==2){
+video.src="video2.mp4"
+title.innerText="Звонок из банка"
+
+text=`Мошенники представляются сотрудниками банка и пытаются получить ваши данные.
+
+Как защититься:
+
+• Никогда не сообщайте номер карты, срок действия и CVV-код.
+
+• Не называйте коды из SMS — это доступ к вашим деньгам.
+
+• При подозрении положите трубку и сами позвоните в банк.
+
+• Не верьте угрозам о "взломе счёта" — это способ давления.`
+}
+
+if(num==3){
+video.src="video3.mp4"
+title.innerText="Звонок от родственника"
+
+text=`Мошенники могут притворяться вашими родственниками и просить деньги.
+
+Как защититься:
+
+• Всегда сначала позвоните родственнику лично.
+
+• Не поддавайтесь панике и давлению.
+
+• Задавайте уточняющие вопросы — мошенники часто путаются.
+
+• Проверяйте информацию через других членов семьи.`
+}
+
+document.getElementById("protectText").innerText=text
+
+}
+
+function back(){
+document.getElementById("page3").style.display="none"
+document.getElementById("page2").style.display="block"
+}
+
+function scrollTopPage(){
+window.scrollTo({top:0,behavior:"smooth"})
+}
+
+</script>
+
+</body>
+</html>
